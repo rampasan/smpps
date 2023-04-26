@@ -24,7 +24,10 @@ const AdminSearchCard = ({
 }: AdminSearchCardProps) => {
 	const router = useRouter();
 	return (
-		<Card>
+		<Card
+			onClick={() => router.push(`/admin/${symbol}`)}
+			className="hover:scale-110 transition duration-300 cursor-pointer hover:shadow-xl"
+		>
 			<CardBody className="p-4 text-right">
 				<Typography
 					variant="small"
@@ -32,16 +35,14 @@ const AdminSearchCard = ({
 				>
 					{symbol}
 				</Typography>
-				<Typography variant="h4" color="blue-gray">
+				<Typography
+					variant="h4"
+					color="blue-gray"
+					className="line-clamp-1 pt-2"
+				>
 					{description}
 				</Typography>
 			</CardBody>
-			<CardFooter
-				className="border-t border-blue-gray-50 p-4 hover:bg-blue-gray-100 rounded-b-lg cursor-pointer transition duration-300"
-				onClick={() => router.push(`/admin/${symbol}`)}
-			>
-				View Details
-			</CardFooter>
 		</Card>
 	);
 };
