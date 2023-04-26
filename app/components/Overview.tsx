@@ -26,7 +26,7 @@ const Overview = ({
 	weburl,
 }: OverviewProps) => {
 	return (
-		<div className="max-w-lg border-2 border-blue-gray-300 my-2 mx-3 rounded-lg p-2 bg-blue-gray-700 text-white">
+		<div className="w-full border-2 mx-3 rounded-lg p-2 bg-gray-900 text-white">
 			<div className="flex flex-col items-center mx-auto">
 				<Image
 					src={logo!}

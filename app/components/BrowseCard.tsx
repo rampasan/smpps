@@ -21,7 +21,10 @@ const BrowseCard = ({ ticker, name, logo, currency }: BrowseCardProps) => {
 	const router = useRouter();
 	return (
 		<div>
-			<Card>
+			<Card
+				onClick={() => router.push(`/browse/${ticker}`)}
+				className="hover:scale-110 transition duration-300 cursor-pointer hover:shadow-xl"
+			>
 				<CardHeader
 					variant="gradient"
 					className="absolute -mt-4 grid h-16 w-16 place-items-center"
@@ -41,16 +44,14 @@ const BrowseCard = ({ ticker, name, logo, currency }: BrowseCardProps) => {
 					>
 						{ticker}
 					</Typography>
-					<Typography variant="h4" color="blue-gray">
+					<Typography
+						variant="h4"
+						color="blue-gray"
+						className="line-clamp-1 py-2"
+					>
 						{name}
 					</Typography>
 				</CardBody>
-				<CardFooter
-					onClick={() => router.push(`/browse/${ticker}`)}
-					className="border-t border-blue-gray-50 p-4 hover:bg-blue-gray-100 rounded-b-lg cursor-pointer transition duration-300"
-				>
-					View Details
-				</CardFooter>
 			</Card>
 		</div>
 	);

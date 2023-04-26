@@ -62,3 +62,20 @@ export type HistoricalData = {
 	t: number[];
 	v: number[];
 };
+
+export type Quote = {
+	c: number;
+	d: number;
+	dp: number;
+	h: number;
+	l: number;
+	o: number;
+	pc: number;
+	t: number;
+};
+
+export type Predictions = {
+	DailyPrediction: number;
+	WeeklyPrediction: number;
+	MonthlyPrediction: number;
+};
