@@ -7,7 +7,6 @@ import { chartConfig } from "@/app/constants/chartConfig";
 import getCurrentUser from "@/app/helpers/getCurrentUser";
 import {
 	convertDateToUnixTimeStamp,
-	convertUnixTimeStampToDate,
 	convertUnixTimeStampToMilliseconds,
 	createDate,
 } from "@/app/helpers/getFormatedDate";
@@ -16,6 +15,8 @@ import getPrediction from "@/app/helpers/getPredictions";
 import getQuote from "@/app/helpers/getQuote";
 import getStockByTicker from "@/app/helpers/getStockByTicker";
 import { HistoricalData, Predictions, Quote } from "@/app/types";
+
+export const revalidate = 3600;
 
 interface IParams {
 	ticker: string;
