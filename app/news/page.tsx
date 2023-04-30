@@ -2,6 +2,8 @@ import NewsCard from "../components/NewsCard";
 import getNews from "../helpers/getNews";
 import { Article } from "../types";
 
+export const revalidate = 3600;
+
 const NewsPage = async () => {
 	const json = await getNews();
 	const news = json.feed;

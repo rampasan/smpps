@@ -44,6 +44,30 @@ const Chart = ({ data, volume, ticker }: ChartProps) => {
 			},
 		},
 		rangeSelector: {
+			enabled: true,
+			allButtonsEnabled: true,
+			inputEnabled: true,
+			buttons: [
+				{
+					type: "month",
+					count: 1,
+					text: "1M",
+				},
+				{
+					type: "month",
+					count: 3,
+					text: "3M",
+				},
+				{
+					type: "month",
+					count: 6,
+					text: "6M",
+				},
+				{
+					type: "all",
+					text: "All",
+				},
+			],
 			selected: 1,
 		},
 		title: {

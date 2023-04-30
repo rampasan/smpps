@@ -8,6 +8,7 @@ import getCurrentUser from "@/app/helpers/getCurrentUser";
 import {
 	convertDateToUnixTimeStamp,
 	convertUnixTimeStampToDate,
+	convertUnixTimeStampToMilliseconds,
 	createDate,
 } from "@/app/helpers/getFormatedDate";
 import getHistoricalData from "@/app/helpers/getHistoricalData";
@@ -45,7 +46,7 @@ const StockDetailPage = async ({ params }: { params: IParams }) => {
 	const processData = (historicalData: HistoricalData) => {
 		return historicalData.c.map((item, index) => {
 			return [
-				convertUnixTimeStampToDate(historicalData.t[index]),
+				convertUnixTimeStampToMilliseconds(historicalData.t[index]),
 				historicalData.o[index],
 				historicalData.h[index],
 				historicalData.l[index],
@@ -56,7 +57,10 @@ const StockDetailPage = async ({ params }: { params: IParams }) => {
 
 	const processVolume = (historicalData: HistoricalData) => {
 		return historicalData.t.map((item, index) => {
-			return [convertUnixTimeStampToDate(item), historicalData.v[index]];
+			return [
+				convertUnixTimeStampToMilliseconds(item),
+				historicalData.v[index],
+			];
 		});
 	};
 
@@ -66,7 +70,9 @@ const StockDetailPage = async ({ params }: { params: IParams }) => {
 
 	return (
 		<div>
-			<FollowButton stockId={details!.id} currentUser={currentUser} />
+			<div className="-mb-6 flex items-end justify-end">
+				<FollowButton stockId={details!.id} currentUser={currentUser} />
+			</div>
 			<Chart data={data} volume={volume} ticker={ticker} />
 			<div className="grid grid-cols-1 md:grid-cols-2 my-2">
 				<Overview
