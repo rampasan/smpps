@@ -1,6 +1,10 @@
 "use client";
 
-import { Bars3Icon, UserCircleIcon } from "@heroicons/react/24/solid";
+import {
+	Bars3Icon,
+	UserCircleIcon,
+	UserPlusIcon,
+} from "@heroicons/react/24/solid";
 import {
 	Avatar,
 	Breadcrumbs,
@@ -33,15 +37,15 @@ const Nav = ({ currentUser }: NavProps) => {
 	return (
 		<Navbar
 			color="white"
-			className="rounded-xl transition-all sticky top-4 z-30 py-3 shadow-md shadow-blue-gray-500/5"
+			className="flex flex-row items-center justify-between xl:justify-end rounded-xl transition-all sticky top-4 z-30 py-3 shadow-md shadow-blue-gray-500/5"
 			fullWidth
 			blurred
 		>
-			<div className="flex flex-col-reverse justify-between gap-6 md:flex-row md:items-center">
+			<div className="flex flex-row justify-between gap-6 items-center">
 				<div className="flex items-center">
-					<div className="mr-auto md:mr-4 md:w-56">
+					{/* <div className="mr-auto md:mr-4 md:w-56">
 						<Input label="Search" />
-					</div>
+					</div> */}
 					<IconButton
 						variant="text"
 						color="blue-gray"
@@ -132,7 +136,7 @@ const Nav = ({ currentUser }: NavProps) => {
 								color="blue-gray"
 								className="hidden items-center gap-1 px-4 xl:flex"
 							>
-								<UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
+								<UserPlusIcon className="h-5 w-5 text-blue-gray-500" />
 								Sign Up
 							</Button>
 							<IconButton
@@ -140,7 +144,7 @@ const Nav = ({ currentUser }: NavProps) => {
 								color="blue-gray"
 								className="grid xl:hidden"
 							>
-								<UserCircleIcon className="h-5 w-5 text-blue-gray-500" />
+								<UserPlusIcon className="h-5 w-5 text-blue-gray-500" />
 							</IconButton>
 						</div>
 					</div>
