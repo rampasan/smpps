@@ -5,16 +5,7 @@ import {
 	UserCircleIcon,
 	UserPlusIcon,
 } from "@heroicons/react/24/solid";
-import {
-	Avatar,
-	Breadcrumbs,
-	Button,
-	IconButton,
-	Input,
-	Navbar,
-	Typography,
-} from "../exports";
-import { usePathname, useRouter } from "next/navigation";
+import { Avatar, Button, IconButton, Navbar } from "../exports";
 import { sideNavState } from "../atoms/sideNavState";
 import { useRecoilState } from "recoil";
 import useLoginModal from "../hooks/useLoginModal";
@@ -27,9 +18,6 @@ interface NavProps {
 }
 
 const Nav = ({ currentUser }: NavProps) => {
-	const pathname = usePathname();
-	const router = useRouter();
-	// const [layout, page] = pathname.split("/").filter((el) => el !== "");
 	const [open, setOpen] = useRecoilState(sideNavState);
 	const loginModal = useLoginModal();
 	const registerModal = useRegisterModal();
